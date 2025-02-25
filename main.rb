@@ -1,16 +1,28 @@
 def caesar_cipher (string, num)
-  alphabet = ("a".."z").to_a
+  alphabet_down = ("a".."z").to_a
+  alphabet_up = ("A".."Z").to_a
   result = string.split('').map do |letter|
-    letter = letter.downcase
-    if alphabet.include?(letter) == false
+    if alphabet_down.include?(letter) == false &&
+       alphabet_up.include?(letter) == false
+
       letter = letter
     else 
-      find_index = alphabet.find_index(letter)  
-      sum = num + find_index
-      if sum >= 26 
-        sum -= 26
-      end
-      letter = alphabet[sum]  
+      if letter.downcase == letter 
+        find_index = alphabet_down.find_index(letter)  
+        sum = num + find_index
+        if sum >= 26 
+          sum -= 26
+        end
+        letter = alphabet_down[sum]  
+      else 
+        find_index = alphabet_up.find_index(letter) 
+        sum = num + find_index
+        if sum >= 26 
+          sum -= 26
+        end
+        letter = alphabet_up[sum]   
+      end  
+
     end  
   end
   return result.join('')
