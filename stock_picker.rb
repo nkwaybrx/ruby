@@ -8,8 +8,14 @@ def stock_picker (prices)
          "#{purchase_price}: #{sell_price - purchase_price}"
          if highest_profit < sell_price - purchase_price
           highest_profit = sell_price - purchase_price 
-          result_hash[:purchase_price] = purchase_price 
-          result_hash[:sell_price] = sell_price
+          result_hash[:purchase] = {
+            purchase_price: purchase_price,
+            purchase_price_index: prices.find_index(purchase_price) 
+          }
+          result_hash[:sell] = {
+          sell_price: sell_price,
+          sell_price_index: prices.find_index(sell_price)
+          }
         end
       end
     end  
