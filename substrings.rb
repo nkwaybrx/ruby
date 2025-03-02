@@ -12,7 +12,7 @@ def substrings (string, dictionary)
       end  
     end  
   end   
-  debugger
+  # debugger
   return result_hash
 
 end  

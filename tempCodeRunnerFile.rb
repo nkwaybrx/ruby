@@ -1,4 +1,3 @@
-          # result_hash[:sell] = {
-          # result_hash[:sell_price] = sell_price
-          # result_hash[:sell_price_index] = prices.find_index(sell_price)
-          # }
+if source[i] > j
+    #   source[i], source[i + 1] = source[i + 1], source[i]
+    # end
